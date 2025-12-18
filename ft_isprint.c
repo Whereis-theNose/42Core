@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: deboiech <deboiech@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/06 13:49:48 by deboiech          #+#    #+#             */
-/*   Updated: 2025/12/08 15:26:01 by deboiech         ###   ########.fr       */
+/*   Created: 2025/11/24 11:48:56 by deboiech          #+#    #+#             */
+/*   Updated: 2025/12/18 14:53:45 by deboiech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+int	ft_isprint(int c)
 {
-    char            *str;
-    unsigned int    i;
-
-    i = 0;
-    str = (char *) malloc((sizeof s) + 1);
-    if (str == NULL)
-        return (NULL);
-    while (s[i])
-    {
-        str = f(i,s[i]);
-        i++;
-    }
-    return (str);
+	if (c > 31 && c < 127)
+		return (1);
+	return (0);
 }

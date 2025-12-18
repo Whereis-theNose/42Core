@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: deboiech <deboiech@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/06 13:49:48 by deboiech          #+#    #+#             */
-/*   Updated: 2025/12/08 15:26:01 by deboiech         ###   ########.fr       */
+/*   Created: 2025/11/24 13:25:52 by deboiech          #+#    #+#             */
+/*   Updated: 2025/12/18 14:53:32 by deboiech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-    char            *str;
-    unsigned int    i;
+	unsigned char	*str1;
+	unsigned char	*str2;
+	size_t		i;
 
-    i = 0;
-    str = (char *) malloc((sizeof s) + 1);
-    if (str == NULL)
-        return (NULL);
-    while (s[i])
-    {
-        str = f(i,s[i]);
-        i++;
-    }
-    return (str);
+	str1 = s1;
+	str2 = s2;
+	i = 0;
+	while (str1[i] && i < n && str1[i] == str2[i])
+	{
+		i++;
+	}
+	return (str1[i] - str2[i]);
 }

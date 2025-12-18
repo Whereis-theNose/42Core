@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: deboiech <deboiech@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/06 13:49:48 by deboiech          #+#    #+#             */
-/*   Updated: 2025/12/08 15:26:01 by deboiech         ###   ########.fr       */
+/*   Created: 2025/11/24 11:49:00 by deboiech          #+#    #+#             */
+/*   Updated: 2025/11/24 11:51:27 by deboiech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <stddef.h>
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
-    char            *str;
-    unsigned int    i;
+	int	i;
+	void	*psrc;
 
-    i = 0;
-    str = (char *) malloc((sizeof s) + 1);
-    if (str == NULL)
-        return (NULL);
-    while (s[i])
-    {
-        str = f(i,s[i]);
-        i++;
-    }
-    return (str);
+	psrc = dest;
+	i = 0;
+	while (i < n)
+	{
+		psrc[i] = src[i];
+		i++;
+	}
+	return (dest);
 }

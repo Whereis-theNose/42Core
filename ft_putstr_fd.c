@@ -1,30 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: deboiech <deboiech@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/06 13:49:48 by deboiech          #+#    #+#             */
-/*   Updated: 2025/12/08 15:26:01 by deboiech         ###   ########.fr       */
+/*   Created: 2025/12/05 16:00:35 by deboiech          #+#    #+#             */
+/*   Updated: 2025/12/08 15:25:45 by deboiech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include <unistd.h>
 
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+void ft_putstr_fd(char *s, int fd)
 {
-    char            *str;
-    unsigned int    i;
+    int i;
 
     i = 0;
-    str = (char *) malloc((sizeof s) + 1);
-    if (str == NULL)
-        return (NULL);
     while (s[i])
     {
-        str = f(i,s[i]);
+        write(fd, &s[i], 1);
         i++;
     }
-    return (str);
 }

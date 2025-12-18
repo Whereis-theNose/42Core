@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: deboiech <deboiech@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/06 13:49:48 by deboiech          #+#    #+#             */
-/*   Updated: 2025/12/08 15:26:01 by deboiech         ###   ########.fr       */
+/*   Created: 2025/11/24 11:43:50 by deboiech          #+#    #+#             */
+/*   Updated: 2025/11/24 11:47:44 by deboiech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-char *ft_strmapi(char const *s, char (*f)(unsigned int, char))
+size_t	strlcat(char *dst, const char *src, size_t size)
 {
-    char            *str;
-    unsigned int    i;
+	int	i;
+	int	j;
 
-    i = 0;
-    str = (char *) malloc((sizeof s) + 1);
-    if (str == NULL)
-        return (NULL);
-    while (s[i])
-    {
-        str = f(i,s[i]);
-        i++;
-    }
-    return (str);
+	j = 0;
+	i = 0;
+	while (dst[j])
+	{
+		j++;
+	}
+	while (i < (size - j) && src[i])
+	{
+		dst[j + i] = src[i];
+		i++
+	}
+	dst[j + i] = '\0';
+	
+	return ();
 }

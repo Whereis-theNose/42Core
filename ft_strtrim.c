@@ -1,39 +1,55 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: deboiech <deboiech@student.42berlin.de>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/12/01 16:35:14 by deboiech          #+#    #+#             */
+/*   Updated: 2025/12/10 18:43:56 by deboiech         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <stdlib.h>
+#include "ft_strlcpy.c"
+//#include "ft_strrchr.c"
 
-static void ft_strcpy(char *dest, const char *src)
+static int setcheck (char c, char const *set)
 {
-    int         i;
+	int	i;
 
-    i = 0;
-    while (src[i])
-    {
-        dest[i] = src[i];
-        i++;
-    }
-    dest[i] = '\0';
+	i = 0;
+	if (*set == '\0')
+		return (0);
+	while (set[i])
+	{
+		if (set[i] == c)
+			return (1);
+		i++;
+	}
+	return (0);
 }
 
-static int ft_strlen(const char *str)
+char	*ft_strtrim(char const *s1, char const *set)
 {
-    int i = 0;
-    while (str[i])
-        i++;
-    return i;
+	char	*res;
+	int		size;
+ 
+	res = NULL;
+	if (!s1 || !set)
+		return (NULL);
+	while (setcheck(*s1, set) == 1 && *s1) // ---> DEFINING THE STARTING POINT
+		s1++; 
+	size = ft_strlen(s1);
+	while (size != 0 && setcheck(s1[size - 1], set) == 1) // ---> DEFINING THE ENDING POINT
+		size--;
+	res = (char *) malloc(size + 1);
+	if (!res)
+		return (NULL);
+	ft_strlcpy(res, (char *)s1, size + 1);
+	return (res);
 }
-
-char *ft_strtrim(char const *s1, char const *set)
-{
-    const char    *str;
-    int           i;
-
-    i = ft_strlen(set) - 1;
-    str = malloc(ft_strlen(s1) - ft_strlen(set) + 1);
-    if (!str)
-        return (NULL);
-    ft_strcpy(str, s1[i]);
-    return (str);
-}
-
+/*
 #include <stdio.h>
 
 int main(int argc, char **argv)
@@ -45,11 +61,9 @@ int main(int argc, char **argv)
     trimmed = ft_strtrim(argv[1], argv[2]);
     if (trimmed)
     {
-        printf("'%s'\n", trimmed);
+        printf("Original string: %s \nTrimmed string: %s\n", argv[1], trimmed);
         free(trimmed);
     }
     return 0;
 }
-
-// Return value: The trimmed string.
-//  NULL if the allocation fails.
+*/
