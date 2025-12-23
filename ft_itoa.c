@@ -6,11 +6,11 @@
 /*   By: deboiech <deboiech@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 18:05:50 by deboiech          #+#    #+#             */
-/*   Updated: 2025/12/06 15:27:22 by deboiech         ###   ########.fr       */
+/*   Updated: 2025/12/22 14:54:26 by deboiech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 static size_t	count(int s)
 {

@@ -1,20 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tolower.c                                       :+:      :+:    :+:   */
+/*   ft_lstmap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: deboiech <deboiech@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/24 11:43:14 by deboiech          #+#    #+#             */
-/*   Updated: 2025/12/22 14:56:44 by deboiech         ###   ########.fr       */
+/*   Created: 2025/12/20 18:06:02 by deboiech          #+#    #+#             */
+/*   Updated: 2025/12/20 18:06:02 by deboiech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	ft_tolower(char c)
+t_list *ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	if (c >= 'A' && c <= 'Z')
-		c += 32;
-	return (c);
+    t_list  *new;
+
+    ft_lstiter(lst, f)
+
 }
+
+
+
+Iterates through the list ’lst’, applies the
+function ’f’ to each node’s content, and creates
+a new list resulting of the successive applications
+of the function ’f’. The ’del’ function is used to
+delete the content of a node if needed.

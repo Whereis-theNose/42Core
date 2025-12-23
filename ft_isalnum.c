@@ -6,9 +6,11 @@
 /*   By: deboiech <deboiech@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 12:00:07 by deboiech          #+#    #+#             */
-/*   Updated: 2025/11/25 17:10:14 by deboiech         ###   ########.fr       */
+/*   Updated: 2025/12/20 16:55:30 by deboiech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isalnum(char c)
 {
