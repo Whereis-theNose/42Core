@@ -6,23 +6,20 @@
 /*   By: deboiech <deboiech@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 11:56:46 by deboiech          #+#    #+#             */
-/*   Updated: 2025/11/24 12:00:42 by deboiech         ###   ########.fr       */
+/*   Updated: 2025/12/23 20:28:59 by deboiech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 void	*ft_memset(void *str, int c, size_t n)
 {
-	int	i;
-	int	*p;
+	unsigned char	*p;
 
-	i = 0;
-	p = str;
-	while (i < n)
+	p = (unsigned char *)str;
+	while (n--)
 	{
-		*p = c;
-		p++;
+		*p++ = (unsigned char)c;
 	}
 	return (str);
 }

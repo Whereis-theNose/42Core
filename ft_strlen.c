@@ -6,13 +6,13 @@
 /*   By: deboiech <deboiech@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 11:43:42 by deboiech          #+#    #+#             */
-/*   Updated: 2025/12/08 16:05:05 by deboiech         ###   ########.fr       */
+/*   Updated: 2025/12/23 13:34:42 by deboiech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-size_t ft_strlen(const char *str)
+size_t	ft_strlen(const char *str)
 {
 	size_t	i;
 

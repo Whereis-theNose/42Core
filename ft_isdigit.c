@@ -6,13 +6,13 @@
 /*   By: deboiech <deboiech@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 11:48:53 by deboiech          #+#    #+#             */
-/*   Updated: 2025/12/18 14:53:51 by deboiech         ###   ########.fr       */
+/*   Updated: 2025/12/23 13:01:10 by deboiech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(char c)
+int	ft_isdigit(int c)
 {
 	if (c >= '0' && c <= '9')
 	{

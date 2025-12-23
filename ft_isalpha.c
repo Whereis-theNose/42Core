@@ -6,13 +6,15 @@
 /*   By: deboiech <deboiech@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 11:57:26 by deboiech          #+#    #+#             */
-/*   Updated: 2025/11/24 11:57:34 by deboiech         ###   ########.fr       */
+/*   Updated: 2025/12/23 20:25:00 by deboiech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isalpha(char c)
+#include "libft.h"
+
+int	ft_isalpha(int c)
 {
-	if ((c > 65 && c < 90) || (c > 97 && c < 122))
+	if ((c > 'a' && c < 'z') || (c > 'A' && c < 'Z'))
 	{
 		return (1);
 	}

@@ -6,7 +6,7 @@
 /*   By: deboiech <deboiech@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 18:05:50 by deboiech          #+#    #+#             */
-/*   Updated: 2025/12/22 14:54:26 by deboiech         ###   ########.fr       */
+/*   Updated: 2025/12/23 13:59:23 by deboiech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,14 @@ static size_t	count(int s)
 		s /= 10;
 		i++;
 	}
-	return(i);
+	return (i);
 }
-char *ft_itoa(int n)
+
+char	*ft_itoa(int n)
 {
 	char	*str;
 	size_t	i;
-	
+
 	i = count(n);
 	str = (char *) malloc(i + 1);
 	if (str == NULL)
@@ -46,7 +47,7 @@ char *ft_itoa(int n)
 	str[count(n)] = '\0';
 	return (str);
 }
-
+/*
 #include <stdio.h>
 int	main(void)
 {
@@ -59,3 +60,4 @@ int	main(void)
  	free(result);
 	return (0);
 }
+*/

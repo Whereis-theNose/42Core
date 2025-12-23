@@ -6,15 +6,13 @@
 /*   By: deboiech <deboiech@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 16:35:14 by deboiech          #+#    #+#             */
-/*   Updated: 2025/12/10 18:43:56 by deboiech         ###   ########.fr       */
+/*   Updated: 2025/12/23 13:54:24 by deboiech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include "ft_strlcpy.c"
-//#include "ft_strrchr.c"
+#include "libft.h"
 
-static int setcheck (char c, char const *set)
+static int	setcheck(char c, char const *set)
 {
 	int	i;
 
@@ -34,14 +32,14 @@ char	*ft_strtrim(char const *s1, char const *set)
 {
 	char	*res;
 	int		size;
- 
+
 	res = NULL;
 	if (!s1 || !set)
 		return (NULL);
-	while (setcheck(*s1, set) == 1 && *s1) // ---> DEFINING THE STARTING POINT
+	while (setcheck(*s1, set) == 1 && *s1)
 		s1++; 
 	size = ft_strlen(s1);
-	while (size != 0 && setcheck(s1[size - 1], set) == 1) // ---> DEFINING THE ENDING POINT
+	while (size != 0 && setcheck(s1[size - 1], set) == 1)
 		size--;
 	res = (char *) malloc(size + 1);
 	if (!res)

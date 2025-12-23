@@ -1,11 +1,11 @@
-# Makefile for libft
-# ----------------------------------------------------------
+# 									Makefile for libft
+# -----------------------------------------------------------------------------------------------------
 
 # Variables declaration
 NAME = libft.a
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
-AR = ar rcs // why??
+AR = ar rcs
 RM = rm -f
 DEPS = libft.h
 
@@ -22,9 +22,6 @@ SRCS = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 # Object files
 OBJS = $(SRCS:.c=.o)
 
-make: $(SRCS) $(DEPS)
-	$(CC) -o $(OBJS) $
-
 # Rules
 all: $(NAME)
 
@@ -32,7 +29,10 @@ $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 	@echo "\n-----   Library $(NAME) created.   -----"
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@ // Instead of $< and $@ I could use %.c and %.o
+	$(CC) $(CFLAGS) -c $< -o $@ 
+	@echo "-----	Object files created.	-----"
+
+$(SRCS): $(DEPS)
 
 fclean: clean
 	$(RM) $(NAME)

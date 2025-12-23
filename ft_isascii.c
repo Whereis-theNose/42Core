@@ -6,9 +6,11 @@
 /*   By: deboiech <deboiech@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 11:48:46 by deboiech          #+#    #+#             */
-/*   Updated: 2025/11/24 11:55:58 by deboiech         ###   ########.fr       */
+/*   Updated: 2025/12/23 12:13:00 by deboiech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 int	ft_isascii(int c)
 {

@@ -6,7 +6,7 @@
 /*   By: deboiech <deboiech@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 15:40:32 by deboiech          #+#    #+#             */
-/*   Updated: 2025/12/18 14:53:19 by deboiech         ###   ########.fr       */
+/*   Updated: 2025/12/23 13:52:19 by deboiech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 int	ft_atoi(const char *nptr)
 {
 	const char	*pstr;
-	int		num;
-	int		buf;
-	int		sign;
+	int			num;
+	int			buf;
+	int			sign;
 
 	pstr = nptr;
 	num = 0;
@@ -30,7 +30,7 @@ int	ft_atoi(const char *nptr)
 	}
 	while (*pstr >= '0' && *pstr <= '9')
 	{
-		buf = *pstr - 48; // changes an ASCII character if a number into an int
+		buf = *pstr - 48;
 		num = num * 10 + buf;
 		pstr++;
 	}

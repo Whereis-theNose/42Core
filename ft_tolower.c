@@ -6,13 +6,13 @@
 /*   By: deboiech <deboiech@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 11:43:14 by deboiech          #+#    #+#             */
-/*   Updated: 2025/12/22 14:56:44 by deboiech         ###   ########.fr       */
+/*   Updated: 2025/12/23 20:09:01 by deboiech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	ft_tolower(char c)
+int	ft_tolower(int c)
 {
 	if (c >= 'A' && c <= 'Z')
 		c += 32;

@@ -6,7 +6,7 @@
 /*   By: deboiech <deboiech@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 12:29:08 by deboiech          #+#    #+#             */
-/*   Updated: 2025/12/18 14:53:37 by deboiech         ###   ########.fr       */
+/*   Updated: 2025/12/23 19:35:03 by deboiech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,13 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	unsigned char	*str;
 	size_t			i;
 
-	str = s;
+	str = (unsigned char *)s;
 	i = 0;
-	while (i < n && str[i])
+	while (i < n && *str)
 	{
-		if (str[i] == c)
-			return (str[i]);
-		i++;
+		if (*str == c)
+			return (str);
+		str++;
 	}
 	return (NULL);
 }

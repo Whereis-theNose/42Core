@@ -6,7 +6,7 @@
 /*   By: deboiech <deboiech@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 11:36:11 by deboiech          #+#    #+#             */
-/*   Updated: 2025/12/18 14:53:30 by deboiech         ###   ########.fr       */
+/*   Updated: 2025/12/23 13:52:55 by deboiech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ void	ft_bzero(void *str, size_t n)
 	}
 }
 
-#include <strings.h>
-
+/*
 int	main(void)
 {
 	void	*str;
@@ -35,3 +34,4 @@ int	main(void)
 
 	return (0);
 }
+*/

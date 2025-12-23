@@ -6,15 +6,15 @@
 /*   By: deboiech <deboiech@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 12:00:07 by deboiech          #+#    #+#             */
-/*   Updated: 2025/12/20 16:55:30 by deboiech         ###   ########.fr       */
+/*   Updated: 2025/12/23 18:25:41 by deboiech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(char c)
+int	ft_isalnum(int c)
 {
-	if (c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z' || c >= '0' && c <= '9')
+	if (ft_isalpha(c) || ft_isdigit(c))
 	{
 		return (1);
 	}

@@ -6,19 +6,32 @@
 /*   By: deboiech <deboiech@student.42berlin.de>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/24 16:11:04 by deboiech          #+#    #+#             */
-/*   Updated: 2025/12/18 14:44:14 by deboiech         ###   ########.fr       */
+/*   Updated: 2025/12/23 20:45:23 by deboiech         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t nmemb, size_t size)
 {
 	void	*memory;
+	size_t	total;
 
-	memory = malloc(nmemb * size);
-	if (!memory || size == 0 || nmemb == 0)
+	memory = NULL;
+	if (size == 0 || nmemb == 0)
+	{
+		memory = malloc(1);
+		if (!memory)
+			return (NULL);
+		else
+			return (memory);
+	}
+	total = nmemb * size;
+	if (total / nmemb != size)
 		return (NULL);
-	ft_bzero(memory, (nmemb * size));
+	memory = malloc(total);
+	if (!memory)
+		return (NULL);
+	ft_bzero(memory, total);
 	return (memory);
 }
